@@ -10,7 +10,7 @@ def new_phonebook():
 def rewrite_phonebook(array_of_rows):
     with open('phonebook.csv', 'w', encoding='utf-8') as phonebook:
         phonebook.write(f'id;фамилия;имя;номер телефона;комментрий\n')
-        for row in array_of_rows:
+        for i, row in enumerate(array_of_rows):
             id = int(row[0])
             last_name = row[1]
             first_name = row[2]

@@ -6,8 +6,8 @@ import sorting
 
 
 def start():
+    initialization.new_phonebook()
     while True:
-        initialization.new_phonebook()
         action = view.select_action()
         if action == 1:
             import_mod.input_person()

@@ -1,0 +1,3 @@
+import view
+
+def start():
