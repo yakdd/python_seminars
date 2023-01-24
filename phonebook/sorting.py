@@ -9,7 +9,6 @@ def sorting_phonebook(indx):
             rows.append(list(map(str, elements)))
 
     rows = rows[1:]
-    sort_rows = sorted(rows, key=lambda x:
-                       int(x[indx]) if indx == 0 else x[indx])
+    sort_rows = sorted(rows, key=lambda x: int(x[indx]) if indx == 0 else x[indx])
 
     initialization.rewrite_phonebook(sort_rows)

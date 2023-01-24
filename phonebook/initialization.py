@@ -16,5 +16,4 @@ def rewrite_phonebook(array_of_rows):
             first_name = row[2]
             phone_num = row[3]
             comment = row[4]
-            phonebook.write(
-                f'{id};{last_name};{first_name};{phone_num};{comment}\n')
+            phonebook.write(f'{id};{last_name};{first_name};{phone_num};{comment}\n')

@@ -25,8 +25,7 @@ def input_person():
         comment = input('Комментарий: ')
 
         with open('phonebook.csv', 'a', encoding='utf-8') as phonebook:
-            phonebook.write(
-                f'{id};{last_name};{first_name};{phone_num};{comment}\n')
+            phonebook.write(f'{id};{last_name};{first_name};{phone_num};{comment}\n')
 
     else:
         input_person()
