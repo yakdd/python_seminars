@@ -30,7 +30,7 @@ def output_info():
         head = phonebook.readline().rstrip().split(';')
         for indx, elem in enumerate(head):
             space = col_width_list[indx] + empty_space
-            print('{0: <{1}}'.format(elem, space), end='')
+            print('{0: <{1}}'.format(elem.upper(), space), end='')
         print()
         print('-' * hr)
 
