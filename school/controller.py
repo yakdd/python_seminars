@@ -45,9 +45,34 @@ def start():
             score.average_rating(dict_Units)
             print(hr)
 
+        if action == 7:
+            # показать средний балл по школе по конкретному предмету
+            score.average_mark(dict_Units)
+            print(hr)
+
+        if action == 8:
+            # показать медалистов
+            print('Медалисты:')
+            medalists = score.medalists_show(dict_Units)
+            mod_export.output(medalists)
+            print(hr)
+
         if action == 9:
             # показать все данные
             mod_export.output(dict_Units)
+            print(hr)
+
+        if action == 77:
+            # экспортировать данные в файл
+            mod_export.export_journal(dict_Units)
+            break
+
+        if action == 88:
+            # импортировать данные из файла
+            import_dict_Units = mod_import.import_journal()
+            if import_dict_Units:
+                dict_Units = import_dict_Units
+                mod_export.output(dict_Units)
             print(hr)
 
         if action == 99:

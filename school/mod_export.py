@@ -12,7 +12,23 @@ def rating_list(dict_u):
 
 
 def output(dict_u):
-    i = 1
-    for key, val in dict_u.items():
-        print(f'{i}. {key}: {val}')
-        i += 1
+    if dict_u:
+        i = 1
+        for name, education in dict_u.items():
+            print(f'{i}. {name}:')
+            for less, score in education.items():
+                print(f'\t\t{less}: {score}')
+            i += 1
+    else:
+        print('Журнал не найден.')
+        return False
+
+
+def export_journal(dict_u):
+    """ экспорт данных в файл """
+    with open('journal.csv', 'w', encoding='utf-8') as file:
+        file.write('Ученик;Предмет;Оценки\n')
+        for unit, lessons in dict_u.items():
+            for less, score_list in lessons.items():
+                score_string = ', '.join(list(map(str, score_list)))
+                file.write(f'{unit};{less};{score_string}\n')
