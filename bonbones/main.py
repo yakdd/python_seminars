@@ -2,7 +2,7 @@ import telebot
 from telebot import types
 from random import choice
 
-bot = telebot.TeleBot('5953495215:AAFSoicvfc6roL_Msj9BkNiPXGfIJpNSkHo')
+bot = telebot.TeleBot('')
 
 begin = 221
 total = begin
