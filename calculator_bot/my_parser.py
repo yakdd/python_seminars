@@ -65,8 +65,8 @@ def complex_parser(math_exp):
     """ Парсинг строки с комплексными числами """
 
     if not check_complex_operation(math_exp):
-        view.error(3)
-        return None
+        result = view.error(2)
+        return result
 
     math_exp = math_exp.replace(' ', '')
     math_exp = math_exp.replace('i', 'j')
@@ -85,8 +85,8 @@ def mixed_parser(math_exp):
     """ Парсинг смешанной строки """
 
     if not check_complex_operation(math_exp):
-        view.error(3)
-        return None
+        result = view.error(2)
+        return result
 
     math_exp = math_exp.replace(' ', '')
     math_exp = math_exp.replace('i', 'j')
@@ -102,14 +102,14 @@ def mixed_parser(math_exp):
         negative = ''
         string = elements[0]
         if not elements[0][0].isdigit() and elements[0][0] != '-':
-            view.error(1)
-            return None
+            result = view.error(1)
+            return result
         elif elements[0][0] == '-':
             negative = '-'
             string = elements[0][1:]
             if not string[0].isdigit():
-                view.error(1)
-                return None
+                result = view.error(1)
+                return result
 
         first_number = negative
         second_number = sign = ''

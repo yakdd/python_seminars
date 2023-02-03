@@ -3,8 +3,8 @@ import my_parser
 import math_functions
 
 
-def calculator():
-    string = view.user_input()
+def calculator(message):
+    string = str(message.text)
 
     if my_parser.check_input(string):
 
@@ -18,7 +18,7 @@ def calculator():
             elif parse == 1:
                 math_expression = my_parser.mixed_parser(string)
             else:
-                view.error(1)
+                result = view.error(1)
 
             if math_expression:
                 if math_expression[2] == '+':
@@ -40,9 +40,10 @@ def calculator():
                     result = math_functions.get_rest_dev(
                         math_expression[0], math_expression[1])
 
-                view.result_output(math_expression, result)
-
+                result = view.result_output(math_expression, result)
         except:
-            view.error(1)
+            result = view.error(1)
     else:
-        view.error(2)
+        result = view.error(1)
+
+    return result
