@@ -5,11 +5,6 @@ import controller, my_logging
 
 bot = telebot.TeleBot('')
 
-first_num = 0
-second_num = 0
-flag = True
-count = 2
-
 @bot.message_handler(commands=['start'])
 def start(message):
     bot.send_message(message.chat.id, f'Привет, {message.from_user.first_name}!')   
